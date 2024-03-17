@@ -1,4 +1,4 @@
-// export const revalidate = 0;
+export const revalidate = 0;
 
 import { products } from "@/utilis/products";
 import Container from "./components/Container";
