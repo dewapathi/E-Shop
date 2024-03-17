@@ -1,0 +1,24 @@
+import Container from "@/app/components/Container";
+import OrderDetails from "./OrderDetails";
+import getOrderById from "@/actions/getOrderById";
+import NullData from "@/app/components/NullData";
+
+interface IParam {
+    orderId?: string
+}
+
+const Order = async ({ params }: { params: IParam }) => {
+    const order = await getOrderById(params);
+
+    if (!order) return <NullData title="No Order"></NullData>
+
+    return (
+        <div>
+            <Container>
+                <OrderDetails order={order} />
+            </Container>
+        </div>
+    );
+};
+
+export default Order;
